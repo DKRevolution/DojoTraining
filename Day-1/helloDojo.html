@@ -1,0 +1,56 @@
+<html>
+<head>
+<title>Welcome to Dojo</title>
+<body>
+
+	<span id="demoId1">Hello </span>
+	<br/><hr>
+	
+	<span id="demoId2">Hello </span>
+	<br/><hr>
+	
+	<span id="demoId3">Hello </span>
+	<br/><hr>
+	
+	<span id="demoId4">Hello </span>
+	
+    <!-- load Dojo 
+    <script src="//ajax.googleapis.com/ajax/libs/dojo/1.10.4/dojo/dojo.js"
+            data-dojo-config="async: true"></script>-->
+			
+	<script src="dojo.js" data-dojo-config="async: true"></script>
+	<script>
+		require(['dojo/dom', 'dojo/dom-construct'], function(dom, domConstruct){
+			var greet1 = dom.byId('demoId1'), greet2 = dom.byId('demoId2'), greet3 = dom.byId('demoId3'), greet4 = dom.byId('demoId4');
+			
+			domConstruct.place('<em>Dojo</em>', greet1, 'before');
+			domConstruct.place('<em>Dhananjay</em>', greet2, 'after');
+			domConstruct.place('<em>TCS</em>', greet3, 'replace');
+			domConstruct.place('<em>ING</em>', greet4, 'first');
+			
+		});
+		
+		//domConstruct.toDom("<div>I'm a Node</div>");
+		//domConstruct.place("someNode", "refNode", "after");
+				
+		//Optional argument. Can be a number or one of the following strings: 
+		//“before”, “after”, “replace”, “only”, “first”, or “last”. If omitted, “last” is assumed. The value of “only” replaces all children of the refNode. If the position argument is a number, it indicates that the node should be inserted as a child of refNode with this number (counting from 0).
+		
+		//domConstruct.create("div");
+		//var n = domConstruct.create("div", { innerHTML: "<p>hi</p>" });
+		//var n = domConstruct.create("div", null, win.body()); Append a new <div> to <body> with no attributes:
+		// var n = domConstruct.create("div", null, win.body(), "first"); Place a new <div> as the first child of <body> with no attributes:
+		//domConstruct.create(node, { style: { color: "red" } }, win.body());  Decorate and place an existing node:
+		//domConstruct.create("a", { href: "foo.html", title: "Goto FOO!", innerHTML: "link" }, win.body());
+		
+		
+		//Safely empty the contents of a DOM element. empty() deletes all children but keeps the node there.
+		//domConstruct.empty("someId");
+
+		//Destroys a DOM element. destroy() deletes all children and the node itself.
+		//domConstruct.destroy("someId");
+		
+	</script>
+	
+</body>
+</html>
